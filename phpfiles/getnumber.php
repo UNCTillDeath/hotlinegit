@@ -3,9 +3,9 @@
 <?php
 
 $servername = "$OPENSHIFT_MYSQL_DB_HOST";
-$username = "adminPirx1YN";
-$password = "zNnqASjayr3w";
-$database =  "php";
+$username = "adminFUq5Qku";
+$password = "ZIB3z9IB-xLy";
+$database =  "hotline";
 $conn = new mysqli($servername, $username, $password, $database);
 
 $data = $_GET['data'];
