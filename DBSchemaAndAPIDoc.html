@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>ITS-Classroom Hotline</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/mockstyle.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type = "text/javascript" src = "js/ajax.js">
+
+    </script>
+
+
+<style>
+    body{
+              font-family:"Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+              padding: 50px;
+            }
+
+            p {
+              padding-left: 20px;
+              margin-top: 0px;
+              margin-bottom: 30px;
+            }
+
+            h5{
+              margin-bottom: 0px;
+            }
+
+            .dbSchema{
+              padding-left: 20px;
+            }
+
+            h4{
+              font-weight: bold;
+              padding: 10px 10px 10px 10px;
+            }
+
+            html{
+              margin: 5px 5px 5px 5px;
+            }
+
+            .titles{
+              text-align: center;
+            }
+
+          </style>
+
+      </head>
+
+    <body>
+    <h1 class = "titles"> ITS-Classroom Hotline - Milestone 2</h1>
+    <h2 class = "titles">By: Keith Whitley, Patric Carman, and Caleigh Link</h2>
+    <h2 class = "titles"><a href = "http://php-kewhitle.apps.unc.edu/home.html">Website Link</a></h2>
+
+
+    <h3>Database Schema</h3>
+
+    <div class = "dbSchema">
+      <h5>Tickets</h5>
+      <p>
+          id : INT(6) UNSIGNED AUTO_INCREMENT, PRIMARY KEY <br/>
+          onyen : VARCHAR(30) <br/>
+          room  : VARCHAR(30) <br/>
+          issue : VARCHAR(30) <br/>
+          status : VARCHAR(30)  <br/>
+          worklog : VARCHAR(100) <br/>
+          reg_date : TIMESTAMP <br/>
+      </p>
+
+      <h5>Buildings</h5>
+      <p>
+        bid : INT, PRIMARY KEY, NOT NULL AUTO_INCREMENT <br/>
+        BuildingName : VARCHAR(30)
+      </p>
+
+      <h5>Rooms</h5>
+      <p>
+        rid : INT, PRIMARY KEY, NOT NULL AUTO_INCREMENT<br/>
+        RoomNumber : VARCHAR(30)
+      </p>
+
+      <h5>BuildingRooms</h5>
+      <p>
+        rid : INT, PRIMARY KEY, foreign key to Rooms table <br/>
+        bid : INT, foreign key to Buildings table
+      </p>
+    </div>
+
+
+<body>
+  <h2 class = "titles"> API Documentation </h2>
+
+  <p>
+      This API provides basic functions that allow for updating the database,
+      including adding and deleting tickets, updating the ticket table, and
+      retrieving buildings and room numbers. Moreover, this API implements periodic
+      AJAX requests to update the website without the need to reload the page.
+  <p>
+
+  <h2> Functions <h2>
+
+    <h4>update()</h4>
+    <p>
+      Updates the main table as well as updating the list of tickets
+    in the ticket card. This function is called on every function that
+    updates the database in some way. There's also a 5-second interval <
+    that calls the function every 5 seconds, allowing data to be udpated in real
+    time without needing to reload the page
+    </p>
+
+    <h4>fillcameralist()</h4>
+    <p>
+      Populates the list of buildings for the camera card. Should only be used on page
+      load as the list of buildings does not get changed often.
+    </p>
+
+    <h4>sendTicket(String ticket_info)</h4>
+    <p>
+      Updates a ticket taking the values of the input fields of the ticket card.
+      Information is sent as a String with the values being seperated by a comma.
+      All information is parsed and handled server-side. Ticket will be deleted if
+      status is set to "Resolved" to keep the active database. This will most likely
+      be changed to have resolved tickets being sent to an archive database for
+      record keeping.
+    </p>
+
+    <h4>submitRoomCheck(String roomcheck_data)</h4>
+    <p>
+      Submits a roomcheck the same way a ticket is submitted, with the exception
+      of how the server handles it. This generates a new ticket with the fields
+      Room, Issue, and Worklog.
+    </p>
+
+    <h4>getBuildingRooms(String building_name)</h4>
+    <p>
+      Takes the building name as an input and queries the database to retrieve
+      accurate room numbers for the building. Currently they are returned un-sorted,
+      but will be updated to return in a sorted fashion.
+    </p>
+
+</body>
+
+
+
+</body>
+
+
+
+<html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>ITS-Classroom Hotline</title>
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js/ajax.js"></script>
+    <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="js/tether.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+
+
+
+</head>
+
+<!-- <div id="mySidenav" class="sidenav">
+  <br>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+</div> -->
+
+
+
+
+<body>
+
+    <div id = "loginpage">
+        <img src="img/large_blue_600px.png" align = "middle">
+        <h1>Please Login: </h1>
+        <div id = "login">
+            <form class="form" accept-charset="UTF-8">
+                <div class="form-group" id="login-nav">
+                    <label class="sr-only" for="exampleInputEmail2">Onyen</label>
+                    <input type="text" class="form-control" id="user" placeholder="Onyen" required>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputPassword2" id="pass">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-elegant" id="sign">Sign in</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <nav class="navbar-dark stylish-color-dark" id = "fullnav">
+
+        <!-- <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#collapseEx2"> -->
+        <!-- <i class="fa fa-bars"></i> -->
+        <!-- </button> -->
+        <div class="container" id ="navwrap">
+
+            <div class="navbar-brand navsection">
+                <div id="navbar-container">
+
+                        <a href = "https://php-kewhitle.apps.unc.edu/snake.html">
+                            <img src="logo.png" id="logo" class="img-fluid">
+                            </a>
+
+
+                </div>
+
+            </div>
+            <div class = "navbar-brand navsection">
+                <h1 class="car-blue-text">Classroom Hotline</h1>
+
+            </div>
+<div class = "navsection">
+
+
+            <div class="pull-md-right">
+                <ul class="nav navbar-nav" id="up">
+                    <li class="nav-item">
+                        <a class="nav-link car-blue-text navlist">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link car-blue-text navlist">Rooms</a>
+                    </li>
+        
+                    <li class="nav-item btn-group dropdownMenu navlist">
+                        <a class="nav-link dropdown-toggle car-blue-text" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Resources</a>
+                        <div class="dropdown-menu dropdown-menu-right stylish-color-dark" aria-labelledby="dropdownMenu1">
+                            <a class="dropdown-item car-blue-text">Supported Rooms</a>
+                            <a class="dropdown-item car-blue-text">Find a Classroom</a>
+                            <a class="dropdown-item car-blue-text">Schedule Classroom Demo</a>
+                            <a class="dropdown-item car-blue-text">Classroom Statistics</a>
+                            <a class="dropdown-item car-blue-text">Classroom Schedule</a>
+                            <a class="dropdown-item car-blue-text">Facilities Request</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+</div>
+
+        </div>
+
+    </nav>
+
+
+    <div class="container" id="mainTable">
+        <div class="row">
+            <div class="col-md-8">
+                <!--Main Page-->
+                <div id="main" class="jumbotron">
+                    <div class="head">
+                        <img src="blankprof.png" class="img-circle  img-fluid pull-xs-left">
+                        <h1 class="display">Keith Whitley</h1>
+                        <!-- <h3 class="display">ITS-Classroom Hotline </h3> -->
+                    </div>
+
+
+
+                    <div class="tab">
+                        <h2 id="refreshhead">Tickets</h2><i class="fa fa-refresh" aria-hidden="true"></i>
+
+                        <div id="txtHint"></div>
+
+                    </div>
+
+                    <div class="tab" id="roomcheckwrap">
+                        <h2>Room Check</h2>
+                        <li class="nav-item btn-group dropdownMenu navlist">
+                            <button class="nav-link btn btn-primary dropdown-toggle" id="rc" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Room</button>
+                            <div class="dropdown-menu stylish-color-dark scroll" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item car-blue-text" onclick="changefield('Phillips 385', 0)">Phillips 385</a>
+                                <a class="dropdown-item car-blue-text" onclick="changefield('Peabody 10', 0)">Peabody 10</a>
+                                <a class="dropdown-item car-blue-text" onclick="changefield('Murphey 116', 0)">Murphey 116</a>
+                            </div>
+                        </li>
+
+
+                        <button class="btn btn-unique" id="checkbutton">Begin Room Check</button>
+
+                        <div class="modal" id="rcModal">
+                            <div class="modal-content card stylish-color-dark">
+                                <span class="close">x</span>
+                                <h1 class="car-blue-text" id="rchead"></h1>
+                                <h3 class="car-blue-text"> What's Wrong?</h3>
+                                <li class="nav-item btn-group dropdownMenu navlist">
+                                    <button class="nav-link btn btn-primary dropdown-toggle" id="issuebutton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Issues</button>
+                                    <div class="dropdown-menu stylish-color-dark" aria-labelledby="dropdownMenu1">
+                                        <a class="dropdown-item car-blue-text" onclick="changefield('VGA', 2)">VGA</a>
+                                        <a class="dropdown-item car-blue-text" onclick="changefield('HDMI', 2)">HDMI</a>
+                                        <a class="dropdown-item car-blue-text" onclick="changefield('Audio', 2)">Audio</a>
+                                        <a class="dropdown-item car-blue-text" onclick="changefield('Nothing', 2)">Nothing</a>
+                                    </div>
+                                </li>
+
+                                <input type="text" class="form-control" id="rcwork" placeholder="Explain the issue" required>
+                                <button type="submit" class="btn btn-primary btn-block" id="rcbutton">Submit Room Check</button>
+                            </div>
+
+                        </div>
+
+
+                        <div class="modal" id="cameraModal">
+                            <div class="modal-content card">
+                                <span class="close">x</span>
+
+
+                                <h1 data-type="roomName">Genome G100</h1>
+                                <!-- <img src="http://placehold.it/500x500" class="figure-img img-fluid" alt="Streaming camera" /> -->
+
+                                <div class="container">
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+
+                                            <img src="http://placehold.it/352x240" class="float-xs-left" id="img-camera" alt="Streaming camera" />
+
+
+                                            <h3>Schedule a demonstration </h3> Learn how to use this room if you are scheduled to use it for a lecture. <button class="button">Learn more</button>
+
+
+
+
+                                            <h3>Room Scheduling</h3>
+                                            <em>Reserve this room for a University-sponsored event.</em>
+
+                                            <p>
+                                                For use during <strong>weekdays during business hours</strong>, contact Classroom Scheduling at <a href="tel://19199626093">962-6093</a>.
+                                            </p>
+
+                                            <p>
+                                                For use during <strong>weeknights and weekends</strong>, contact Events Management: <a href="tel://19199663832">966-3832</a>
+                                            </p>
+
+
+                                            <h3>Equipment</h3>
+                                            <ul id="equipment">
+                                                <li>
+                                                    Equipment goes here
+                                                </li>
+                                            </ul>
+
+
+
+
+
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+
+                <div class="card stylish-color-dark" id="cams">
+                    <div class="card-block">
+                        <div id="page-wrapper">
+                            <h2 class="car-blue-text">Cameras</h2>
+                            <label for="default">Pick a Building</label>
+                            <input type="text" list="roomlist" id="buildingname" placeholder="e.g. Peabody">
+                            <datalist id="roomlist" class = "lists">
+
+                                    </datalist>
+
+
+                            <label for="ajax">Pick a Room Number</label>
+                            <input type="text" id="numinput" list="numlist" placeholder="Room Number">
+                            <datalist id="numlist" class = "lists"></datalist>
+                            <button type="submit" class="btn btn-primary btn-block" id="search">Search</button>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card stylish-color-dark" id="ticket">
+                    <div class="card-block">
+                        <div id="page-wrapper">
+                            <h2 class="car-blue-text">Tickets</h2>
+                            <li class="nav-item btn-group dropdownMenu navlist">
+                                <a class="nav-link dropdown-toggle car-blue-text" id="room" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Room</a>
+                                <div class="dropdown-menu dropdown-menu-right stylish-color-dark" id="ticketcard" aria-labelledby="dropdownMenu1">
+
+                                </div>
+                            </li>
+                            </br>
+                            </br>
+                            </br>
+                            <li class="nav-item btn-group dropdownMenu navlist">
+                                <a class="nav-link dropdown-toggle car-blue-text" data-toggle="dropdown" id="status" aria-haspopup="true" aria-expanded="false">Status</a>
+                                <div class="dropdown-menu dropdown-menu-right stylish-color-dark" id="statuschose" aria-labelledby="dropdownMenu1">
+                                    <a class="dropdown-item car-blue-text" onclick="updatestatus('Resolved')">Resolved</a>
+                                    <a class="dropdown-item car-blue-text" onclick="updatestatus('Pending Analyst')">Pending Analyst</a>
+                                </div>
+                            </li>
+                            </br>
+                            </br>
+                            <div class="form-group" id="worklog">
+                                <label class="sr-only">Worklog</label>
+                                <input type="text" class="form-control" id="worklogin" placeholder="Worklog" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="sub">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
